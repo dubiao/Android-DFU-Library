@@ -1327,8 +1327,8 @@ public abstract class DfuBaseService extends IntentService implements DfuProgres
 	protected void waitFor(final int millis) {
 		synchronized (mLock) {
 			try {
-				sendLogBroadcast(DfuBaseService.LOG_LEVEL_DEBUG, "wait(" + millis + ")");
-				mLock.wait(millis);
+				sendLogBroadcast(DfuBaseService.LOG_LEVEL_DEBUG, "wait(" + millis + "÷ 10 )");
+				mLock.wait(millis / 10);
 			} catch (final InterruptedException e) {
 				loge("Sleeping interrupted", e);
 			}
